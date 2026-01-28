@@ -1,3 +1,4 @@
+
 // Tab switching
 const donationTab = document.getElementById('donation-tab-btn');
 const donationSection = document.getElementById('donation-section');
@@ -29,3 +30,4 @@ historyTab.addEventListener('click', function() {
     donationTab.classList.add('btn-outline');
 
 });
+

@@ -1,8 +1,3 @@
-document.getElementById('blog-btn').addEventListener('click', function(){
-    window.location.href = 'blog.html';
-});
-
-
 
 document.getElementById('btn-donate-noakhali').addEventListener('click', function(event){
 
@@ -33,6 +28,8 @@ document.getElementById('btn-donate-noakhali').addEventListener('click', functio
                         ${donationAmount} Taka is Donated for Noakhali Flood Relief
                     </h3>
                 </div> `;
+    
+    document.getElementById('successModal').showModal();
     
 
 });
@@ -65,6 +62,8 @@ document.getElementById('btn-donate-feni').addEventListener('click', function(ev
                         ${donationAmount} Taka is Donated for Feni Flood Relief
                     </h3>
                 </div> `;
+    
+    document.getElementById('successModal').showModal();
 });
 
 document.getElementById('btn-donate-injured').addEventListener('click', function(event){
@@ -93,8 +92,12 @@ document.getElementById('btn-donate-injured').addEventListener('click', function
                         ${donationAmount} Taka is Donated for Injured in Quota Movement
                     </h3>
                 </div> `;
+    
+    document.getElementById('successModal').showModal();
 });
 
 
-
-
+// Page Switching
+document.getElementById('blog-btn').addEventListener('click', function(){
+    window.location.href = 'blog.html';
+});

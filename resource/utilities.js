@@ -5,9 +5,47 @@ function updateMainBalance(donationAmount){
     const updatedMainBalance = mainBalance - donationAmount;
     
     document.getElementById('main-balance').innerText = updatedMainBalance;
+    
+    // Save to localStorage
+    localStorage.setItem('mainBalance', updatedMainBalance);
 
 }
 
+
+// Initialize saved values from localStorage on page load
+function initializeSavedData() {
+    const savedBalance = localStorage.getItem('mainBalance');
+    if (savedBalance !== null) {
+        document.getElementById('main-balance').innerText = savedBalance;
+    }
+    
+    const savedNoakhali = localStorage.getItem('noakhaliAmount');
+    if (savedNoakhali !== null) {
+        const noakhaliElement = document.getElementById('noakhali-amount');
+        if (noakhaliElement) {
+            noakhaliElement.innerText = savedNoakhali;
+        }
+    }
+    
+    const savedFeni = localStorage.getItem('feniAmount');
+    if (savedFeni !== null) {
+        const feniElement = document.getElementById('feni-amount');
+        if (feniElement) {
+            feniElement.innerText = savedFeni;
+        }
+    }
+    
+    const savedInjured = localStorage.getItem('injuredAmount');
+    if (savedInjured !== null) {
+        const injuredElement = document.getElementById('injured-amount');
+        if (injuredElement) {
+            injuredElement.innerText = savedInjured;
+        }
+    }
+}
+
+// Call initialization when page loads
+window.addEventListener('DOMContentLoaded', initializeSavedData);
 
 
 function getInputFieldValueByID(id){
